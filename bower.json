@@ -1,0 +1,32 @@
+{
+  "name": "lava-web",
+  "authors": [
+    "The PTCSoft Authors"
+  ],
+  "license": "All rights reserved",
+  "dependencies": {
+    "screenfull": "^3.3.1",
+    "polymer": "Polymer/polymer#^2.0.0",
+    "webcomponentsjs": "^1.0.19",
+    "paper-styles": "PTCSoft/paper-styles#master",
+    "paper-dialog": "PolymerElements/paper-dialog#^2.0.0",
+    "lava-shared-component": "ptc:polymer-element/lava-shared-component.git#1.3.1",
+    "lazy-imports": "Polymer/lazy-imports#^2.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0",
+    "paper-styles": "master",
+    "iron-selector": "^2.0.0",
+    "iron-flex-layout": "^2.0.0",
+    "iron-collapse": "^2.0.0",
+    "webcomponentsjs": "^1.0.2",
+    "iron-component-page": "^3.0.0",
+    "iron-doc-viewer": "^3.0.0",
+    "iron-a11y-keys-behavior": "^v2.0.0",
+    "iron-resizable-behavior": "^v2.0.0"
+  },
+  "private": true
+}
