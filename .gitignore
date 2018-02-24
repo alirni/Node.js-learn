@@ -1,0 +1,31 @@
+
+#OSX
+.DS_Store
+._*
+
+#Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled
+/build
+/dist
+
+# Optional npm cache directory
+/.npm
+
+# temp
+/.tmp
+
+# Dependencies
+node_modules
+bower_components
+
+# IDE
+/.idea
+*.sublime-*
