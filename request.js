@@ -9,7 +9,8 @@ requestOption = {
   url: `https://api.telegram.org/bot${token}/${methods}`,
   body: {
     chat_id: 153206620,
-    text: 'salam ali'
+    parse_mode: 'markdown',
+    text: '[ramezany.com](http://ramezany.com/)',
   },
   json: true
 },
