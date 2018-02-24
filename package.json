@@ -1,0 +1,12 @@
+{
+  "name": "Node.js-learn",
+  "version": "1.0.0",
+  "description": "this is a node.js learn",
+  "main": "index.js",
+  "repository": "https://github.com/alirni/Node.js-learn.git",
+  "author": "alirni <aliramezani19.1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
