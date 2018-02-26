@@ -16,7 +16,7 @@ requestOption = {
   json: true
 },
 
-sendRequest = (text) => {
+sendRequest = (text, callback) => {
   requestOption.body.text = text;
   request(requestOption, (error, response, body) => {
 
@@ -27,16 +27,15 @@ sendRequest = (text) => {
       console.log('Error: %o , Body: %o, ', error, body);
     }
 
-    if(!(body && body.ok)) {
-      return;
+    if (typeof callback === 'function') {
+      callback(error, response, body);
     }
-    console.log('body is ok, ', body);
   });
 }
 ;
 
-sendRequest('hello ali');
-sendRequest('hello ali 2');
-sendRequest('hello ali 3');
-sendRequest('hello ali 4');
-sendRequest('hello ali 5');
+sendRequest('hello ali', () => {
+  sendRequest('hello ali 2', () => {
+    sendRequest('hello ali 3');
+  });
+});
