@@ -16,26 +16,32 @@ requestOption = {
   json: true
 },
 
-sendRequest = (text, callback) => {
-  requestOption.body.text = text;
-  request(requestOption, (error, response, body) => {
-
-    if (!error && body && body.ok ) {
-      console.log('Ok, %o', body);
-    }
-    else {
-      console.log('Error: %o , Body: %o, ', error, body);
-    }
-
-    if (typeof callback === 'function') {
-      callback(error, response, body);
-    }
+sendRequest = (text) => {
+  console.log('run sendRequest function');
+  return new Promise( (resolve, reject) => {
+    requestOption.body.text = text;
+    request(requestOption, (error, response, body) => {
+      if (!error && body && body.ok) {
+        resolve(body);
+      }
+      else {
+        reject(error, body);
+      }
+    });
   });
 }
 ;
 
-sendRequest('hello ali', () => {
-  sendRequest('hello ali 2', () => {
-    sendRequest('hello ali 3');
-  });
+sendRequest('hello ali 1')
+.then( () => {
+  return sendRequest('hello ali 2');
+})
+.then( () => {
+  return sendRequest('hello ali 3');
+})
+.then( () => {
+  return sendRequest('hello ali 4');
+})
+.then( () => {
+  return sendRequest('hello ali 5');
 });
