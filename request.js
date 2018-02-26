@@ -1,8 +1,8 @@
 const
 request = require('request'),
 
-apiUrl = 'https://api.telegram.org',
 token = '306042286:AAHFyBP2Ei-8vtoeQIIXh43mGxtImcckb9I',
+apiUrl = 'https://api.telegram.org',
 methods = 'sendMessage',
 
 requestOption = {
@@ -17,7 +17,7 @@ requestOption = {
 },
 
 sendRequest = (text) => {
-  console.log('run sendRequest function');
+  console.log('run send request function');
   return new Promise( (resolve, reject) => {
     requestOption.body.text = text;
     request(requestOption, (error, response, body) => {
@@ -32,16 +32,18 @@ sendRequest = (text) => {
 }
 ;
 
-sendRequest('hello ali 1')
-.then( () => {
-  return sendRequest('hello ali 2');
-})
-.then( () => {
-  return sendRequest('hello ali 3');
-})
-.then( () => {
-  return sendRequest('hello ali 4');
-})
-.then( () => {
-  return sendRequest('hello ali 5');
-});
+const run = async () => {
+  console.log('run function for use await');
+
+  try {
+    for (let i = 1; i <= 5; i++) {
+      await sendRequest(`salam alirni ${i}`);
+    }
+    console.log('done');
+  }
+  catch (error) {
+    console.log('error: %o', error);
+  }
+};
+
+run();
