@@ -22,6 +22,7 @@ sendRequest = (text) => {
     requestOption.body.text = text;
     request(requestOption, (error, response, body) => {
       if (!error && body && body.ok) {
+        console.log('response: %o', response);
         resolve(body);
       }
       else {
@@ -34,11 +35,8 @@ sendRequest = (text) => {
 
 const run = async () => {
   console.log('run function for use await');
-
   try {
-    for (let i = 1; i <= 5; i++) {
-      await sendRequest(`salam alirni ${i}`);
-    }
+    await sendRequest('salam alirni');
     console.log('done');
   }
   catch (error) {
