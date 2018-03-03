@@ -10,7 +10,7 @@ requestOption = {
   url: `${apiUrl}/bot${token}/${methods}`,
   body: {
     chat_id: 153206620,
-    parse_mode: 'markdown',
+    // parse_mode: 'markdown',
     text: '[ramezany.com](http://ramezany.com/)',
   },
   json: true
@@ -22,7 +22,7 @@ sendRequest = (text) => {
     requestOption.body.text = text;
     request(requestOption, (error, response, body) => {
       if (!error && body && body.ok) {
-        console.log('response: %o', response);
+        console.log('response: %o', response.body);
         resolve(body);
       }
       else {
