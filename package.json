@@ -7,6 +7,7 @@
   "author": "alirni <aliramezani19.1@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.3.2",
     "request": "^2.83.0",
     "telegram-bot-api.js": "^0.10.5"
   }
